@@ -19,16 +19,16 @@ const Header = () => {
                     </ul>
                 </nav>
             </header>
-            <>
+            <div className='title-div'>
             <h1 className='title'>React Pokedex</h1>
-            <a href='' className='title-link'>
+            <a href='https://github.com/RodionOtto/react-pokedex' target='_blank' className='title-link'>
                 <img
                 src={githubLogo}
                 alt='Official logo of GitHub'
                 className='title-logo'
                 />
             </a>
-            </>
+            </div>
         </>
     )
 }
