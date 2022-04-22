@@ -3,17 +3,23 @@ import './AllPokemons.css';
 import Card from '../Card/Card';
 
 const AllPokemons = (props) => {
-    return(
-        <div className='cards-grid'>
-            {props.pokemons.map((pokemon, id) => {
-                return(
+    const fetchPokemons = () => {props.pokemons.then((pokemon) => {
+        pokemon.results.map((item, id) => {
+            console.log(item);
+            return(
                     <Card
-                        pokemon={pokemon}
-                        key={pokemon.id}
-                        id={id}
+                        pokemon={item}
+                        key={id}
+                        id={item.id}
+                        name={item.name}
                     />
                 )
-            })}
+        }) 
+    })}
+
+    return(
+        <div className='cards-grid'>
+            {fetchPokemons()}
         </div>
     )
 }
